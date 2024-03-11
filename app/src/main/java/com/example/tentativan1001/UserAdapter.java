@@ -29,7 +29,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
     @Override
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
         User user = users.get(position);
-        holder.nameTextView.setText(user.getName());
+        holder.nameTextView.setText(user.getNome());
         holder.emailTextView.setText(user.getEmail());
     }
 
@@ -42,11 +42,14 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         TextView nameTextView;
         TextView emailTextView;
 
+        TextView ixTextView;
+
 
         UserViewHolder(View itemView) {
             super(itemView);
             nameTextView = itemView.findViewById(R.id.name_text_view);
-            emailTextView = itemView.findViewById(R.id.email_text_view);        }
+            emailTextView = itemView.findViewById(R.id.email_text_view);
+            ixTextView = itemView.findViewById(R.id.id_text_view);        }
 
     }
 }

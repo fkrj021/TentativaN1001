@@ -12,12 +12,10 @@ public class RetrofitClient {
 
     public static Retrofit getClient() {
         if (retrofit == null) {
-            Gson gson = new GsonBuilder()
-                    .setLenient()
-                    .create();
+
             retrofit = new Retrofit.Builder()
                     .baseUrl("https://suntech.eco.br/api/ver/")
-                    .addConverterFactory(GsonConverterFactory.create(gson))
+                    .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
         return retrofit;
